@@ -32,7 +32,7 @@ module.exports = (wintersmith, callback) ->
             else
               callback null, new Buffer stdout
 
-          c = child_process.execFile 'sass', command, exec_opts, onComplete
+          c = child_process.exec 'sass ' + command.join(' '), exec_opts, onComplete
         
   SassPlugin.fromFile = (filename, callback) ->
     fs.readFile filename.full, (error, buffer) ->
